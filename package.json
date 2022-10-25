@@ -1,0 +1,21 @@
+{
+  "name": "hogwarts",
+  "version": "1.0.0",
+  "scripts": {
+    "start" : "parcel public/index.html --open",
+    "build" : "parcel build public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TkachukRR/20-hogwarts2.git"
+  },
+  "author": "Roman Tkachuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TkachukRR/20-hogwarts2/issues"
+  },
+  "homepage": "https://github.com/TkachukRR/20-hogwarts2#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
