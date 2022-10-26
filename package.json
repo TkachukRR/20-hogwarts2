@@ -2,8 +2,8 @@
   "name": "hogwarts",
   "version": "1.0.0",
   "scripts": {
-    "start" : "parcel public/index.html --open",
-    "build" : "parcel build public/index.html --dist-dir ./docs --public-utl /20-hogwarts2/"
+    "start" : "parcel public/index.html --dist-dir ./dist --open",
+    "build" : "parcel build public/index.html --dist-dir ./docs --public-url /20-hogwarts2/"
   },
   "repository": {
     "type": "git",
