@@ -1,0 +1,45 @@
+:root {
+    --color-light-gray: #a5a5a5;
+    --color-gray: #6e6e6e;
+    --color-dark-gray: #363636;
+
+    --color-background: var(--color-light-gray);
+
+    --color-text-main: var(--color-dark-gray);
+    --color-text-secondary: var(--color-gray);
+
+    --color-scrollbar: var(--color-dark-gray);
+    --color-scrollbar-bg: var(--color-light-gray);
+}
+
+* , ::after, ::before {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+    scrollbar-color:  var(--color-scrollbar) var(--color-scrollbar-bg);
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-bg);
+}
+
+body {
+  position: relative;
+  background-color: var(--color-background);
+  /* background-image: url(../../../public/bg.jpg); */
+  background-attachment: fixed;
+}

@@ -1,8 +1,7 @@
-import { API_URL, URL_STUDENTS, URL_HOUSE } from "./constants/api";
-import { getApiData } from "./utils/getApiData";
+import App from "./components/App";
 
 (async () => {
-  const data = await getApiData.getData(API_URL);
+  await App.render()
 })();
 
 // getApiData.getData(API_URL)
