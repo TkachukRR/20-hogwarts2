@@ -26,7 +26,7 @@ class FilterButtons {
 
           if (typeof filterButton !== "boolean") {
             arrayFilterButtonNames.unshift(filterButton);
-          } else if (filterButton != false) {
+          } else if (filterButton == true) {
             const key = tableHeader.toLowerCase();
             newArr.addElementToArrayFromDataByKey(
               data,
@@ -34,12 +34,6 @@ class FilterButtons {
               key
             );
           }
-
-          // typeof(filterButton) !== "boolean"
-          // ? arrayFilterButtonNames.unshift(filterButton)
-          // : filterButton != false
-          // ? newArr.addElementToArrayFromDataByKey(data, arrayFilterButtonNames, tableHeader.toLowerCase())
-          // : false;
         }
       });
 
