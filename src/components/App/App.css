@@ -1,5 +1,5 @@
 :root {
-    --color-light-gray: #a5a5a5;
+    --color-light-gray: #cccccc;
     --color-gray: #6e6e6e;
     --color-dark-gray: #363636;
 
@@ -16,6 +16,7 @@
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
@@ -40,6 +41,10 @@
 body {
   position: relative;
   background-color: var(--color-background);
-  /* background-image: url(../../../public/bg.jpg); */
+  background-image: url(../../../public/bg.jpg);
   background-attachment: fixed;
 }
+
+ul {
+    list-style: none;
+  }

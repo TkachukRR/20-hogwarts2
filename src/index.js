@@ -1,7 +1,7 @@
 import App from "./components/App";
 
 (async () => {
-  await App.render()
+  await App.render();
 })();
 
 // getApiData.getData(API_URL)

@@ -2,8 +2,8 @@
   "name": "hogwarts",
   "version": "1.0.0",
   "scripts": {
-    "start" : "parcel public/index.html --dist-dir ./dist --open",
-    "build" : "parcel build public/index.html --dist-dir ./docs --public-url /20-hogwarts2/"
+    "start": "parcel public/index.html --dist-dir ./dist --open",
+    "build": "parcel build public/index.html --dist-dir ./docs --public-url /20-hogwarts2/"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/TkachukRR/20-hogwarts2#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
     "parcel": "^2.7.0"
   }
 }
