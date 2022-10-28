@@ -45,7 +45,9 @@ class FilterButtons {
         .map(
           (buttonName) => `
                 <li class="filter__item">
-                    <button class="btn filter__button" data-description="${getCamelcaseString(buttonName)}">${buttonName}</button>
+                    <button class="btn filter__button" data-description="${getCamelcaseString(
+                      buttonName
+                    )}">${buttonName}</button>
                 </li>`
         )
         .join("");
@@ -55,6 +57,7 @@ class FilterButtons {
 
     REFS.filterButtons.innerHTML = `${buttonsListMarkup}`;
   }
+
   eventListener() {
     const list = document.querySelector(".filter__list");
 

@@ -35,6 +35,6 @@ export const PAGE_SETTINGS = {
         sortButton: false,
         filterButton: false, //boolean or button name
     },
-    favorites: true,
-
 };
+
+export const FAVORITES = true;
