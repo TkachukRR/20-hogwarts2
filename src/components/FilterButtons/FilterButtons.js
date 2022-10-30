@@ -4,6 +4,7 @@ import { REFS } from "../../constants/root";
 import { PAGE_SETTINGS } from "../../constants/pageSettings";
 import { newArr } from "../../utils/arrayHelper";
 import { getCamelcaseString } from "../../utils/getCamelcaseString";
+import Table from "../Table/Table";
 
 import "./FilterButtons.scss";
 
@@ -60,18 +61,20 @@ class FilterButtons {
 
   eventListener() {
     const list = document.querySelector(".filter__list");
+    let previousDataValue = '';
 
     list.addEventListener("click", (event) => {
       onButtonClick(event);
     });
 
     function onButtonClick(event) {
-      if (event.target.localName === "button") {
-        removeActiveClassFommButtons(event);
-        toggleActiveClass(event);
-
+      if (event.target.localName !== "button") {
         return;
       }
+
+      removeActiveClassFommButtons(event);
+      toggleActiveClass(event);
+      Table.renderBody(getTableDataUrl(event, 'description'));
     }
 
     function removeActiveClassFommButtons(event) {
@@ -86,7 +89,26 @@ class FilterButtons {
     function toggleActiveClass(event) {
       event.target.classList.toggle("active");
     }
+
+    function getTableDataUrl (event, attributeName) {
+      switch (event.target.dataset[attributeName]) {
+        case previousDataValue:
+          previousDataValue = '';
+          return API_URL;
+
+        case 'allStudents':
+          previousDataValue = event.target.dataset[attributeName];
+          return API_URL + URL_STUDENTS;
+
+        default:
+          previousDataValue = event.target.dataset[attributeName];
+          return API_URL + URL_HOUSE + event.target.dataset[attributeName];
+      }
+    }
+
   }
+
+
 }
 
 export default new FilterButtons();

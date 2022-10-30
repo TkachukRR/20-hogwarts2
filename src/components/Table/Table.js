@@ -16,7 +16,7 @@ class Table {
       )
       .join("");
 
-    const tableHeaderRowMarkup = `<thead><tr>${tableHeaderMarkup}</tr></thead>`;
+    const tableHeaderRowMarkup = `<thead class="table__header"><tr>${tableHeaderMarkup}</tr></thead>`;
 
     function getTableHeaderNamesArray() {
       const tableHeaderNames = [];
@@ -40,15 +40,14 @@ class Table {
       .insertAdjacentHTML("afterbegin", tableHeaderRowMarkup);
   }
 
-  async renderBody() {
-
-    REFS.pageTable
-    .querySelector(".table")
-    .insertAdjacentHTML("beforeend", `<tbody></tbody>`);
-
-    REFS.pageTable.querySelector("tbody").innerHTML = '';
-    
-    const data = await getApiData.getData(API_URL);
+  async renderBody(url) {
+    if (!REFS.pageTable.querySelector(".table__body")) {
+      REFS.pageTable
+      .querySelector(".table")
+      .insertAdjacentHTML("beforeend", `<tbody class="table__body"></tbody>`);
+    }
+       
+    const data = await getApiData.getData(url);
 
     const values = Object.keys(PAGE_SETTINGS);
     console.log(values)
@@ -56,7 +55,7 @@ class Table {
     const tableBodyRowsMarkup = data.map(element => {
         const { name, dateOfBirth, house, wizard, ancestry, hogwartsStudent, hogwartsStaff } = element
 
-        function getStudentSuff() {
+        function getStudentStaff() {
             if (hogwartsStaff) {return 'staff'}
             if (hogwartsStudent) {return 'student'}
             if (!hogwartsStudent && !hogwartsStaff) {return '-'}
@@ -68,14 +67,14 @@ class Table {
             <td>${house}</td>
             <td>${wizard}</td>
             <td>${ancestry}</td>
-            <td>${getStudentSuff()}</td>
+            <td>${getStudentStaff()}</td>
         </tr>`;
     }).join("");
 
-    REFS.pageTable
-    .querySelector(".table")
-    .insertAdjacentHTML("afterbegin", tableBodyRowsMarkup);
+    REFS.pageTable.querySelector(".table__body").innerHTML = tableBodyRowsMarkup
   }
+
+  
 }
 
 export default new Table();

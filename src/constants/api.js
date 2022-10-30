@@ -3,6 +3,6 @@ const API_URL = "https://hp-api.herokuapp.com/api/characters/";
 
 const URL_STUDENTS = 'students';
 
-const URL_HOUSE = [];
+const URL_HOUSE = 'house/';
 
 export { API_URL, URL_STUDENTS, URL_HOUSE };
