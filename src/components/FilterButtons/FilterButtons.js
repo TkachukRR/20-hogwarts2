@@ -3,7 +3,7 @@ import { getApiData } from "../../utils/getApiData";
 import { REFS } from "../../constants/root";
 import { PAGE_SETTINGS } from "../../constants/pageSettings";
 import { newArr } from "../../utils/arrayHelper";
-import { getCamelcaseString } from "../../utils/getCamelcaseString";
+import { tansformSting } from "../../utils/getCamelcaseString";
 import Table from "../Table/Table";
 
 import "./FilterButtons.scss";
@@ -46,7 +46,7 @@ class FilterButtons {
         .map(
           (buttonName) => `
                 <li class="filter__item">
-                    <button class="btn filter__button" data-description="${getCamelcaseString(
+                    <button class="btn filter__button" data-description="${tansformSting.getCamelcase(
                       buttonName
                     )}">${buttonName}</button>
                 </li>`

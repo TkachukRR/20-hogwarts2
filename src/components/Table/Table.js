@@ -1,7 +1,7 @@
 import { API_URL, URL_STUDENTS, URL_HOUSE } from "../../constants/api";
 import { getApiData } from "../../utils/getApiData";
 import { PAGE_SETTINGS } from "../../constants/pageSettings";
-import { getCamelcaseString } from "../../utils/getCamelcaseString";
+import { tansformSting } from "../../utils/getCamelcaseString";
 import { REFS } from "../../constants/root";
 
 import "./Table.scss";
@@ -12,7 +12,7 @@ class Table {
     const tableHeaderMarkup = tableHeaderNamesArray
       .map(
         (name) => `
-              <th data-th-name="${getCamelcaseString(name)}">${name}</th>`
+              <th data-th-name="${tansformSting.getCamelcase(name)}">${name}</th>`
       )
       .join("");
 

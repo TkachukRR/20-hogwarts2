@@ -1,4 +1,5 @@
-export function getCamelcaseString(string) {
+class TansformSting {
+  getCamelcase(string) {
     return string
       .toLocaleLowerCase()
       .trim()
@@ -7,4 +8,6 @@ export function getCamelcaseString(string) {
         index == 0 ? word : word[0].toUpperCase() + word.slice(1)
       )
       .join("");
+  }
 }
+export const tansformSting = new TansformSting()
