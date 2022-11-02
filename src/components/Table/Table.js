@@ -50,7 +50,6 @@ class Table {
     const data = await getApiData.getData(url);
 
     const values = Object.keys(PAGE_SETTINGS);
-    console.log(values)
 
     const tableBodyRowsMarkup = data.map(element => {
         const { name, dateOfBirth, house, wizard, ancestry, hogwartsStudent, hogwartsStaff } = element
